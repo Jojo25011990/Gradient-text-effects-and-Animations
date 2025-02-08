@@ -1,0 +1,141 @@
+@forward './reset';
+
+// *** Variables ***
+$color-black: #000;
+$bg-color: #222;
+
+$color-white: #fff;
+
+$gradient-color-1: #f32170;
+$gradient-color-2: #ffeb07;
+$gradient-color-3: #2196f3;
+$gradient-color-4: #ff00eb;
+// *** Mixins ***
+@mixin flex-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin heading-settings() {
+  font-size: 10rem;
+  text-align: center;
+  padding: 0.5rem;
+
+  background: linear-gradient(
+    to right,
+    $gradient-color-1,
+    $gradient-color-2,
+    $gradient-color-3,
+    $gradient-color-4
+  );
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+// *** Main Styles ***
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.section {
+  width: 100vw;
+  height: 100vh;
+  background-color: $bg-color;
+  @include flex-center;
+
+  &__heading {
+    @include heading-settings;
+  }
+
+  &__heading--1 {
+    text-shadow: 0 0.3rem 0 rgba($color: $color-black, $alpha: 0.6);
+  }
+
+  &__heading--2 {
+    text-shadow: 0 0 0.3rem rgba($color: $color-black, $alpha: 0.5);
+  }
+
+  &__heading--3 {
+    text-shadow: 0 0.2rem 0 $color-black;
+  }
+
+  &__heading--4 {
+    text-shadow: 0 0 0.3rem $color-black;
+  }
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 10%;
+  right: 5%;
+
+  font-size: 5rem;
+
+  background: linear-gradient(
+    $gradient-color-1,
+    $gradient-color-2,
+    $gradient-color-3,
+    $gradient-color-4
+  );
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  width: 8.5rem;
+  height: 8.5rem;
+
+  @include flex-center;
+
+  border: 0.2rem solid $color-white;
+  border-radius: 50%;
+  border-left-color: $gradient-color-1;
+  border-top-color: $gradient-color-2;
+  border-right-color: $gradient-color-3;
+  border-bottom-color: $gradient-color-4;
+
+  cursor: pointer;
+
+  &:hover,
+  &:active {
+    animation: shake 0.3s linear 1;
+    animation-delay: 0.2s;
+  }
+
+  transition: all 0.35s !important;
+
+  &.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0.7rem);
+  }
+
+  20% {
+    transform: translateX(-0.7rem);
+  }
+
+  40% {
+    transform: translateX(0.7rem);
+  }
+
+  60% {
+    transform: translateX(-0.7rem);
+  }
+
+  80% {
+    transform: translateX(0.7rem);
+  }
+
+  100% {
+    transform: translateX(-0.7rem);
+  }
+}

@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+input,
+button,
+textarea {
+  background-color: #fff;
+  border: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.section {
+  width: 100vw;
+  height: 100vh;
+  background-color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section__heading {
+  font-size: 10rem;
+  text-align: center;
+  padding: 0.5rem;
+  background: linear-gradient(to right, #f32170, #ffeb07, #2196f3, #ff00eb);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.section__heading--1 {
+  text-shadow: 0 0.3rem 0 rgba(0, 0, 0, 0.6);
+}
+.section__heading--2 {
+  text-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.5);
+}
+.section__heading--3 {
+  text-shadow: 0 0.2rem 0 #000;
+}
+.section__heading--4 {
+  text-shadow: 0 0 0.3rem #000;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 10%;
+  right: 5%;
+  font-size: 5rem;
+  background: linear-gradient(#f32170, #ffeb07, #2196f3, #ff00eb);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  width: 8.5rem;
+  height: 8.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.2rem solid #fff;
+  border-radius: 50%;
+  border-left-color: #f32170;
+  border-top-color: #ffeb07;
+  border-right-color: #2196f3;
+  border-bottom-color: #ff00eb;
+  cursor: pointer;
+  transition: all 0.35s !important;
+}
+.back-to-top:hover, .back-to-top:active {
+  animation: shake 0.3s linear 1;
+  animation-delay: 0.2s;
+}
+.back-to-top.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0.7rem);
+  }
+  20% {
+    transform: translateX(-0.7rem);
+  }
+  40% {
+    transform: translateX(0.7rem);
+  }
+  60% {
+    transform: translateX(-0.7rem);
+  }
+  80% {
+    transform: translateX(0.7rem);
+  }
+  100% {
+    transform: translateX(-0.7rem);
+  }
+}
